@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Period Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.2/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        form label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        form input,
+        form select {
+            margin-top: 5px;
+            padding: 5px;
+            width: 100%;
+        }
+
+        form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        h2, h3 {
+            margin-top: 20px;
+        }
+
+       
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 70px;
+    text-align: center;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    left: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    padding-left: 100px;
+  }
+  
+  #main {
+    transition: margin-right .5s;
+    text-align: right;
+    text-align: top;
+    padding-right: 30px;
+  }
+  .bye{
+    padding-top: 20px;
+  }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {padding-top: 15px;}
+            .sidenav a {font-size: 18px;}
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="bye">
+            <a class="navbar-brand fw-bold" style="font-size: xx-large;">GleeFulSoul</a>
+        </div>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="physical.html" target="_blank">Physical Health</a>
+            <a href="mental.html" target="_blank">Mental Health</a>          
+            <a href="" target="_blank">LGBTQ+</a>
+            <a href="" target="_blank">About Us</a>
+            <a href="mem.html" target="_blank">Membership</a>
+            <a href="signup.html" target="_blank">Sign Up</a>
+        </div>
+        
+        <div id="main">
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Period Calculator</h1>
+        <form>
+            <label for="start_date">Start of Period:</label>
+            <input type="date" id="start_date" name="start_date" required>
+
+            <label for="duration">Duration of Period (in days):</label>
+            <input type="number" id="duration" name="duration" required>
+
+            <label for="heavy_flow">No of Heavy Flow Days:</label>
+            <input type="number" id="heavy_flow" name="heavy_flow" required>
+
+            <label for="medium_flow">No of Medium Flow Days:</label>
+            <input type="number" id="medium_flow" name="medium_flow" required>
+
+            <label for="normal_flow">No of Normal Flow Days:</label>
+            <input type="number" id="normal_flow" name="normal_flow" required>
+
+            <label for="spotting">No of Days Spotting:</label>
+            <input type="number" id="spotting" name="spotting" required>
+
+            <label for="pads_changed">Min No of Pads Changed:</label>
+            <input type="number" id="pads_changed" name="pads_changed" required>
+
+            <label for="mood">Mood Throughout the Periods:</label>
+            <input type="text" id="mood" name="mood" required>
+
+            <label for="cravings">Cravings:</label>
+            <select id="cravings" name="cravings">
+                <option value="chocolate">Chocolate</option>
+                <option value="sweets">Sweets</option>
+                <option value="salty">Salty snacks</option>
+                <option value="fruits">Fruits</option>
+            </select>
+
+            <button type="button" onclick="calculatePeriod()">Calculate</button>
+        </form>
+
+        <h2>Results</h2>
+        <p>Next period is expected on: <span id="next_period_date"></span></p>
+        <p>Ovulation date is expected on: <span id="ovulation_date"></span></p>
+        <h3>Overall Period Report:</h3>
+        <p id="period_report"></p>
+    </div>
+
+    <script>
+        function calculatePeriod() {
+            var startDate = new Date(document.getElementById("start_date").value);
+            var duration = parseInt(document.getElementById("duration").value);
+
+            // Calculate next period date based on the given duration
+            var nextPeriodDate = new Date(startDate.getTime() + (duration * 24 * 60 * 60 * 1000));
+            document.getElementById("next_period_date").innerHTML = nextPeriodDate.toDateString();
+
+            // Calculate ovulation date
+            var ovulationDate = new Date(nextPeriodDate.getTime() - (14 * 24 * 60 * 60 * 1000));
+            document.getElementById("ovulation_date").innerHTML = ovulationDate.toDateString();
+
+            // Overall period report
+            var report = "Your period started on " + startDate.toDateString() + ". It lasted for " + duration + " days.";
+            report += " Next period is expected on " + nextPeriodDate.toDateString() + ".";
+            report += " Ovulation date is expected on " + ovulationDate.toDateString() + ".";
+            document.getElementById("period_report").innerHTML = report;
+        }
+
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250", px;
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+    </script>
+
+</body>
+</html>

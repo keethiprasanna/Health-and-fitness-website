@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Bingo</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.bingo-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.square {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    background-color: #e9e9e9;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.square:hover {
+    background-color: #dcdcdc;
+}
+
+.completed-exercises {
+    margin-top: 30px;
+}
+
+.completed-exercises h2 {
+    color: #333;
+}
+
+.completed-exercises ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.completed-exercises li {
+    margin-bottom: 10px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fitness Bingo</h1>
+        <div class="bingo-board">
+            <div class="square" data-exercise="Push-ups">Push-ups</div>
+            <div class="square" data-exercise="Squats">Squats</div>
+            <div class="square" data-exercise="Jumping Jacks">Jumping Jacks</div>
+            <div class="square" data-exercise="Plank">Plank</div>
+            <div class="square" data-exercise="Lunges">Lunges</div>
+            <div class="square" data-exercise="Burpees">Burpees</div>
+            <div class="square" data-exercise="Mountain Climbers">Mountain Climbers</div>
+            <div class="square" data-exercise="High Knees">High Knees</div>
+            <div class="square" data-exercise="Bicycle Crunches">Bicycle Crunches</div>
+        </div>
+        <div class="completed-exercises">
+            <h2>Completed Exercises</h2>
+            <ul id="completed-list"></ul>
+        </div>
+    </div>
+    <script>
+        // Define fitness bingo board with workout exercises
+const fitnessBingoBoard = [
+    "Push-ups", "Squats", "Jumping Jacks",
+    "Plank", "Lunges", "Burpees",
+    "Mountain Climbers", "High Knees", "Bicycle Crunches"
+];
+
+// Initialize user's completed exercises
+let completedExercises = [];
+
+// Function to mark completed exercises
+function markCompletedExercise(event) {
+    const exercise = event.target.textContent;
+    if (fitnessBingoBoard.includes(exercise) && !completedExercises.includes(exercise)) {
+        completedExercises.push(exercise);
+        event.target.classList.add("completed");
+        updateCompletedList();
+        checkBingo();
+    }
+}
+
+// Function to update completed exercises list
+function updateCompletedList() {
+    const completedList = document.getElementById("completed-list");
+    completedList.innerHTML = "";
+    completedExercises.forEach(exercise => {
+        const li = document.createElement("li");
+        li.textContent = exercise;
+        completedList.appendChild(li);
+    });
+}
+
+// Function to check for bingo
+function checkBingo() {
+    // Define bingo patterns (e.g., row, column, diagonal)
+    const bingoPatterns = [
+        ["Push-ups", "Squats", "Jumping Jacks"],
+        ["Plank", "Lunges", "Burpees"],
+        ["Mountain Climbers", "High Knees", "Bicycle Crunches"]
+    ];
+
+    // Check if any pattern is completed
+    for (const pattern of bingoPatterns) {
+        if (pattern.every(exercise => completedExercises.includes(exercise))) {
+            alert("BINGO! Challenge Completed!");
+            // You can reward the user with points, badges, or other rewards
+            break;
+        }
+    }
+}
+
+// Add click event listener to squares
+const squares = document.querySelectorAll(".square");
+squares.forEach(square => {
+    square.addEventListener("click", markCompletedExercise);
+});
+
+    </script>
+</body>
+</html>

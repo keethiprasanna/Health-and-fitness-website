@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise</title>
+    <title>Exercise Recommendations</title>
+    <style>
+        body, h1, h2, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #007acc;
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        h1 {
+            font-size: 38px;
+        }
+
+        .logo {
+            color: #ffcc00;
+            font-weight: bold;
+        }
+
+        .highlight {
+            color: #ffcc00;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        section {
+            background-color: #fff;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+        }
+
+        .content {
+            flex: 1; 
+            padding-right: 20px; 
+        }
+
+        h2 {
+            color: #007acc;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .image {
+            max-width: 100%;
+            height: 200px;
+            width: 200px;
+            border-radius: 8px;
+        }
+
+        .button {
+            border-radius: 6px;
+            background-color: #007acc;
+            border-color: black ;
+            border-width: 3px;
+            color: black;
+            text-align: center;
+            font-size: 28px;
+            padding: 20px;
+            width: 200px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        .button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+        
+        .button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+        
+        .button:hover span {
+            padding-right: 25px;
+        }
+        
+        .button:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+
+        .button-placement1 {
+            padding-left: 635px;
+            padding-bottom: 100px;
+        }
+
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><span class="logo">Exercise</span> Recommendations</h1>
+    </header>
+
+
+    <section>
+        <div class="content">
+            <h2>Exercises for Weight Gain</h2>
+            <p>For individuals looking to gain weight, incorporating strength training exercises and consuming a calorie surplus are essential. Here are some exercises to help with weight gain:</p>
+            <ul>
+                <li><strong>Strength Training:</strong> Focus on compound exercises like squats, deadlifts, bench presses, and rows.</li>
+                <li><strong>Resistance Band Exercises:</strong> Use resistance bands for bicep curls, tricep extensions, lateral raises, and leg presses.</li>
+            </ul>
+        </div>
+        <img src="https://samarpanphysioclinic.com/wp-content/uploads/2024/02/Weight-Gain.webp" alt="Weight Gain" class="image">
+    </section>
+
+    
+    <section>
+        <div class="content">
+            <h2>Exercises for Weight Loss</h2>
+            <p>For individuals aiming to lose weight, a combination of cardiovascular exercises and strength training is effective. Here are some exercises to aid in weight loss:</p>
+            <ul>
+                <li><strong>High-Intensity Interval Training (HIIT):</strong> Incorporate short bursts of intense exercise followed by brief rest periods.</li>
+                <li><strong>Circuit Training:</strong> Combine strength training exercises with cardiovascular movements in a circuit format.</li>
+            </ul>
+        </div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAcRbU2fnK6hJ1fbz-BZDr-23AcqnkIFaYfw&s" alt="Weight Loss" class="image">
+    </section>
+
+ 
+    <section>
+        <div class="content">
+            <h2>Exercises for Pregnant Women</h2>
+            <p>Exercise during pregnancy can promote overall health and prepare the body for childbirth. It's important to choose low-impact exercises that are safe for both the mother and the baby. Here are some recommended exercises for pregnant women:</p>
+            <ul>
+                <li><strong>Prenatal Yoga:</strong> Engage in gentle yoga poses specifically designed for pregnant women.</li>
+                <li><strong>Pelvic Floor Exercises (Kegels):</strong> Perform pelvic floor exercises to strengthen the muscles supporting the bladder, uterus, and bowels.</li>
+            </ul>
+        </div>
+        <img src="https://www.careinsurance.com/upload_master/media/posts/September2020/yoga.jpg" alt="Pregnant Women" class="image">
+    </section>
+
+    
+    <section>
+        <div class="content">
+            <h2>Exercises for Women During Periods</h2>
+            <p>During menstruation, some women may experience discomfort and cramping. Engaging in light exercises can help alleviate symptoms and improve overall well-being. Here are some recommended exercises for women during periods:</p>
+            <ul>
+                <li><strong>Walking:</strong> Engage in low-impact aerobic exercise like walking to alleviate menstrual cramps.</li>
+                <li><strong>Gentle Stretching:</strong> Practice gentle stretches to relieve tension and discomfort associated with menstrual cramps.</li>
+            </ul>
+        </div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9dT3_n352btGLxtG5VejUyir2_abBqbkEVy6vrmEZ9w&s" alt="Women During Periods" class="image">
+    </section>
+
+       
+    <section>
+        <div class="content">
+            <h2>Exercises for Fitness</h2>
+            <p>For improving overall fitness and endurance, incorporating a combination of cardiovascular exercises and strength training is beneficial. Here are some exercises for fitness:</p>
+            <ul>
+                <li><strong>Running:</strong> Incorporate running or jogging into your routine to improve cardiovascular health and endurance.</li>
+                <li><strong>Bodyweight Exercises:</strong> Perform bodyweight exercises like push-ups, squats, lunges, and planks to build strength and muscle endurance.</li>
+            </ul>
+        </div>
+        <img src="data:image/jpeg;base64,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" alt="Fitness" class="image">
+    </section>
+
+
+</body>
+</html>

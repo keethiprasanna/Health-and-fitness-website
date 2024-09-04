@@ -1,0 +1,150 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color:#cd1cac;
+}
+
+.pricing-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+.pricing-plan {
+  background-color:		#fffdfc;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 50px;
+  margin: 0 5px;
+  text-align: center;
+  width: 300px;
+  height: 550px;
+  opacity: 0.9;
+  padding-left: 2px;
+  padding-top: 2px;
+  padding-right: 1px;
+}
+
+.price {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
+  text-align:center;
+}
+
+button {
+  background-color: #10151b;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  
+}
+
+header{
+  position:fixed;
+  margin: 0;
+  top:0;
+  left:0;
+  right: 0;
+  z-index: 1000;
+  background-color:white;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-top:2px;
+  padding-right: 2px;
+  padding-bottom: 8px;
+  opacity: 0.7;
+  height: 65px;
+   
+  
+  font-size: 15px;
+} 
+.hi{
+   text-align:right;
+  
+}
+.bye{
+  
+     background-image: url(https://img.freepik.com/free-photo/gradient-blue-abstract-background-smooth-dark-blue-with-black-vignette-studio_1258-67766.jpg?w=900&t=st=1689693495~exp=1689694095~hmac=6ed21c5a9a871d6b3dc591495f0b7f8de7f1f35b49250dc34661718ad0f03a9f);
+      background-size: 100%;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    
+
+  
+}
+.text1{
+text-align: left;
+padding-bottom: 19px;
+}
+.text2{
+text-align: left;
+}
+.text3{
+text-align: left;
+}
+.h3{
+text-align: center;
+}
+.pic1{
+padding-top: 4px;
+}
+.pic3{
+padding-top: 4px;
+}
+.sidenav {
+height: 100%;
+width: 0;
+position: fixed;
+z-index: 1;
+top: 0;
+right: 0;
+background-color: #111;
+overflow-x: hidden;
+transition: 0.5s;
+padding-top: 70px;
+text-align: center;
+}
+
+.sidenav a {
+padding: 8px 8px 8px 32px;
+text-decoration: none;
+font-size: 25px;
+color: #818181;
+display: block;
+transition: 0.3s;
+}
+
+.sidenav a:hover {
+color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+position: absolute;
+top: 0;
+left: 25px;
+font-size: 36px;
+margin-left: 50px;
+padding-left: 100px;
+}
+
+#main {
+transition: margin-right .5s;
+text-align: right;
+text-align: top;
+padding-right: 30px;
+}
+.hi{
+margin-left: auto;
+}

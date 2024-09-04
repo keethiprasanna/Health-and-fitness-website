@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal Entries</title>
+    <style>
+        /* CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+             background-color: #E9EDC9;;
+        }
+
+        #journal {
+            margin: 0 auto;
+            width: 60%;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        #prompt-text {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        #entry-input {
+            width: 120%;
+            height: 250px;
+            margin-bottom: 10px;
+            resize: none;
+            font-size: 16px;
+            padding: 15px;
+        }
+
+        #submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 13px;
+        }
+
+        #submit-btn:hover {
+            background-color: #45a049;
+        }
+
+        #entry-display {
+            width: 120%;
+            border: 1px solid black;
+            padding: 15px;
+            text-align: left;
+            height: 200px;
+            overflow-y: auto;
+        }
+
+        .entry {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="journal">
+        <h2 id="prompt-text">Write your journal entry:</h2>
+        <textarea id="entry-input" placeholder="Write your entry here..."></textarea>
+        <button id="submit-btn" onclick="submitEntry()">Submit</button>
+        
+        <div id="entry-display">
+            <h2>Journal Entries</h2>
+            <div id="comment-feed"></div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript code
+        function submitEntry() {
+            var entry = document.getElementById("entry-input").value.trim();
+            if (entry !== "") {
+                var commentFeed = document.getElementById("comment-feed");
+                var now = new Date();
+                var dateTime = now.toLocaleString();
+                var newEntry = document.createElement("div");
+                newEntry.className = "entry";
+                newEntry.innerHTML =   dateTime + " - " + entry + "</p>";
+                commentFeed.appendChild(newEntry);
+                document.getElementById("entry-input").value = ""; // Clear the textarea after submission
+            } else {
+                alert("Please write something before submitting.");
+            }
+        }
+    </script>
+</body>
+</html>
